@@ -180,4 +180,82 @@ public class Basics{
 
         return -1 ;
     }
+      public static void reverse(int arr[]) {
+        int start = 0 ;
+        int end = arr.length-1;
+        while(start < end){
+            int temp = arr[start] ;
+            arr[start] = arr[end] ;
+            arr[end] = temp ;
+            start ++;
+            end -- ;
+        }
+    }    
+    public static void printPairs(int arr[]){
+        int tp = 0 ;
+        for(int i = 0 ; i < arr.length ; i++){
+            int curr = arr[i];
+            for(int j = i+1 ; j < arr.length ; j++){
+                System.out.print("("+curr+","+ arr[j] + ") ");
+                tp++ ;
+            }
+            System.out.println();
+        }
+        System.out.println("Total pairs = "+tp);
+    }    
+    public static void printSubarrays(int numbers[]) {
+        int ts = 0 ;
+        for(int i = 0 ; i < numbers.length ; i++){
+            int start = i ;
+            for(int j = i ; j < numbers.length ; j++){
+                int end = j ;
+                for(int k = start ; k <= end ; k++){
+                    System.out.print(numbers[k]+" ");
+                }
+                System.out.println();
+                ts++;
+            }
+            System.out.println();
+        }
+        System.out.println("Total Subarrays = "+ts);
+    }    
+    public static void subarraySum(int numbers[]) {
+        int maxSum  =  Integer.MIN_VALUE ;
+        int currSum = 0 ;
+
+        for(int i = 0 ; i < numbers.length ; i++){
+            for(int j = i ; j < numbers.length ; j++){
+                currSum  = 0 ;
+                for(int k = i ; k <= j ; k++){
+                    currSum += numbers[k];
+                }
+                System.out.println(currSum);
+                if(maxSum < currSum){
+                    maxSum = currSum ;
+                }
+            }
+        }
+        System.out.println("Maximum sum : "+maxSum);
+    }    
+    public static void subarraySum2(int numbers[]) {
+        int currSum = 0 ;
+        int maxSum = Integer.MIN_VALUE ;
+        int prefix[] = new int[numbers.length];
+
+        prefix[0] = numbers[0] ;
+
+        for(int i = 1 ; i < numbers.length ; i++){
+            prefix[i] = prefix[i-1] + numbers[i] ;
+        }
+        for(int i = 0 ; i < numbers.length ; i++){
+            for(int j = i ; j < numbers.length ; j++){
+                currSum = i == 0 ? prefix[j] : prefix[j] - prefix[i-1];
+            
+                if(maxSum < currSum){
+                    maxSum = currSum ;
+                }
+            }
+        }
+        System.out.println("max sum = "+maxSum);
+    }    
 }
