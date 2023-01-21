@@ -23,6 +23,10 @@ public class Strings {
             String fullName = firstName + " " + lastName ;
             // System.out.println(fullName);
             printLettrs(fullName);
+            
+             // System.out.println(subString(fullName, 2, 6)); //ye fxn hmne bnaya 
+            // but in java there is inbuilt substring fxn 
+            System.out.println(fullName.substring(2,6)); 
         }
     }
     public static void printLettrs(String str) {
@@ -30,6 +34,13 @@ public class Strings {
             System.out.print(str.charAt(i) + " ");
         }
         System.out.println();
+    }
+     public static String subString(String str, int si, int ei) {
+        String substr = " " ;
+        for(int i = si ; i < ei ; i++){
+            substr += str.charAt(i) ;    
+        }
+        return substr ;
     }
     
     
