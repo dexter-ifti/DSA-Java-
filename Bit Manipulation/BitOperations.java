@@ -34,7 +34,7 @@ public class BitOperations {
     }    
     
     public static int clearBit(int n , int i) {
-        int bitMask = ~(i << i) ;
+        int bitMask = ~(1 << i) ;
         return n & bitMask ;
     }    
     
