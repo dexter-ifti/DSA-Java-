@@ -1,3 +1,4 @@
+public class BitOperations {   
    public static void main(String args[]) {          
              // even_odd(2);
             // even_odd(5);
@@ -47,3 +48,4 @@
         int BitMask = newBit << i ;
         return n | BitMask ;
     }    
+}
