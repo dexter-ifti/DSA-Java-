@@ -8,14 +8,6 @@ public class Rate_In_Maze
 
      solveMaze(maze);
   }
-  public static void printSudoko(int sudoko[][]) {
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
-                System.out.print(sudoko[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
 
     public static void printSolution(int sol[][]) {
         for (int i = 0; i < sol.length; i++) {
