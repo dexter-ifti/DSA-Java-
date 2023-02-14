@@ -8,11 +8,15 @@ public class Monotonic {
         for(int i = 0 ; i < list.size()-1 ; i++){
             if(list.get(i) > list.get(i+1)){
                 inc = false ;
-            }
-            if(list.get(i) < list.get(i+1)){
-                dec = false ;
+                break;
             }
         }
+        
+        for (int i = 0; i < list.size()-1 ; i++) {
+            if(list.get(i) < list.get(i+1)){
+                dec = false ;
+                break;
+            }
         return inc || dec ;
         
     }
