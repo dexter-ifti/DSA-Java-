@@ -137,6 +137,87 @@ public class LL {
        return helper(head, key);
     }
 
+     public void reverse() {
+        Node prev = null;
+        Node curr = tail = head ;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
+    public void deleteNthfromEnd(int n) {
+        // calculate size
+        int sz = 0;
+        Node temp = head;
+        while (temp != null) {
+            temp = temp.next;
+            sz++;
+        } 
+        if (n == sz) {
+            head = head.next;
+            return;
+        }
+        int i = 1;
+        int iToFind = sz-n;
+        Node prev = head;
+        while (i < iToFind) {
+            prev = prev.next;
+            i++;    
+        }
+        prev.next = prev.next.next;
+        return;
+    }
+    
+    // Slow Fast Approach
+    public Node findMid(Node head) {
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;  //slow is my Mid node
+    }
+   
+    public boolean checkPaindrome() {
+        if (head == null || head.next == null) {
+            return true;
+        }
+        // Step1 - find Mid
+        Node midNode = findMid(head);
+
+        // Step 2 - reverse 2nd Half
+        Node prev = null;
+        Node curr = midNode;
+        Node next;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        Node right = prev;
+        Node left = head;
+
+        // Step 3 - check left half & right half
+        while (right != null) {
+            if (left.data != right.data) {
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        } 
+
+        return true;
+    }
     public static void main(String[] args) {
         LL ll = new LL();
 
@@ -146,13 +227,19 @@ public class LL {
         ll.addLast(4);
         ll.addLast(5);
 
+        // ll.print();
+        // ll.removeFirst();
+        // ll.print();
+        // System.out.println(ll.size);
+        // ll.removeLast();
+        // ll.print();
+        // System.out.println(ll.size);
+        // System.out.println(ll.recSearch(4));
+        // System.out.println(ll.recSearch(43));
+        // ll.reverse();
+        // ll.deleteNthfromEnd(3);
         ll.print();
-        ll.removeFirst();
-        ll.print();
-        System.out.println(ll.size);
-        ll.removeLast();
-        ll.print();
-        System.out.println(ll.size);
+        System.out.println(ll.checkPaindrome());
     }
 
 }
