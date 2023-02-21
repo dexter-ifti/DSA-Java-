@@ -74,4 +74,5 @@ public class CycleLL {
         removeCycle();
         System.out.println(isCycle());
     }
-}
+} 
+// Khatam
