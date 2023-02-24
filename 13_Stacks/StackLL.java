@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 // import java.util.Stack;
 
-public class StackB {
+public class StackLL {
     
     static class Node {
         int data;
