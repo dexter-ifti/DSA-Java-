@@ -1,34 +1,7 @@
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class StackB {
-
-    public static void pushAtBottom(Stack<Integer> s, int data) {
-        if (s.isEmpty()) {
-            s.push(data);
-            return;
-        }
-        int top = s.pop();
-        pushAtBottom(s, data);
-        s.push(top);
-    }
-
-    public static void reverse(Stack<Integer> s) {
-        if (s.isEmpty()) {
-            return;
-        }
-
-        int top = s.pop();
-        reverse(s);
-        pushAtBottom(s, top);
-    }
-
-    public static void printStack(Stack<Integer> s) {
-        while (!s.isEmpty()) {
-            System.out.println(s.pop());
-        }
-    }
-
+public class StocksProblem {
     public static void stockSpan(int stocks[], int span[]) {
         Stack<Integer> s = new Stack<>();
         span[0] = 1;
