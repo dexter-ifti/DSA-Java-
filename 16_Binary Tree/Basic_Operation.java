@@ -44,47 +44,6 @@ public class Basic_Operation {
 
         return leftSum + rightSum + root.data ;
     }
-
-    // Approach -1
-    public static int diameter(Node root) {
-        if(root == null){
-            return 0;
-        }
-
-        int leftDiam = diameter(root.left);
-        int leftHt = height(root.left);
-        int rightDiam = diameter(root.right);
-        int rightHt = height(root.right);
-
-        int selfDiam = leftHt + rightHt + 1;
-
-        return Math.max(selfDiam, Math.max(leftDiam, rightDiam));
-    }
-
-    static class Info {
-        int diam;
-        int ht;
-
-        public Info(int diam, int ht) {
-            this.diam = diam;
-            this.ht = ht;
-        }
-    }
-
-    // Approach - 2
-    public static Info diameter2(Node root) {
-        if (root == null) {
-            return new Info(0, 0);
-        }
-
-        Info leftInfo = diameter2(root.left);
-        Info rightInfo = diameter2(root.right);
-
-        int diam = Math.max(Math.max(leftInfo.diam, rightInfo.diam), leftInfo.ht + rightInfo.ht + 1);
-        int ht = Math.max(leftInfo.ht, rightInfo.ht) + 1;
-
-        return new Info(diam, ht);
-    }
     public static void main(String[] args) {
         /*
                   1
@@ -105,8 +64,6 @@ public class Basic_Operation {
         // System.out.println(height(root));
         // System.out.println(count(root));
         // System.out.println(sum(root));
-        // System.out.println(diameter(root));
-        System.out.println(diameter2(root).diam);
-        System.out.println(diameter2(root).ht);
+       
     }
 }
