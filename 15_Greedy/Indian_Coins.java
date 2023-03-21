@@ -30,6 +30,9 @@ public class Indian_Coins {
         System.out.println();
     }
 
+
+
+// this is brute force 
     public static int change(int value) {
         int twoK = value / 2000;
         value %= 2000;
