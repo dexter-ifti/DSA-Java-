@@ -21,6 +21,8 @@ public class Height_tree {
         return Math.max(lh, rh) + 1;
     }
 
+    
+    //count nodes in a tree
     public static int count(Node root) {
         if (root == null) {
             return 0;
@@ -30,6 +32,8 @@ public class Height_tree {
         return leftCount + rightCount + 1;
     }
 
+    
+    // sum of nodes
     public static int sum(Node root) {
         if (root == null) {
             return 0;
