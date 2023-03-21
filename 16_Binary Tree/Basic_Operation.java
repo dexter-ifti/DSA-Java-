@@ -1,4 +1,4 @@
-public class Height_tree {
+public class Basic_Operation {
     static class Node {
         int data;
         Node left;
