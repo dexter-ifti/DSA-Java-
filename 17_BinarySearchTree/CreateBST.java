@@ -1,4 +1,5 @@
-public class BST2 {
+// Creation of BST from sorted Array
+public class CreateBST {
     static class Node {
         int data;
         Node left, right;
