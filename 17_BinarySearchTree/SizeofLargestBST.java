@@ -1,4 +1,5 @@
-public class LargestBST {
+// here we'll find largest size of BST
+public class SizeofLargestBST {
     static class Node {
         int data;
         Node left, right;
