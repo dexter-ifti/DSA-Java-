@@ -1,5 +1,8 @@
 public class SubarraySum {
                         //Brute Force Method
+// ##  YE Sirf Samajhne ke liye h 
+// ##  LeetCode pr kaam nhi krta h 
+// ##   Time Limit Exceed kr jaati h;
     public static void subarraySum(int numbers[]) { 
         int maxSum  =  Integer.MIN_VALUE ;
         int currSum = 0 ;
