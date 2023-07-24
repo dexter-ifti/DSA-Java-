@@ -1,3 +1,4 @@
+// to uppercase the first charracter of each word
 public class UpperCase {
     public static void main(String[] args) {
         String str = "hi, i am taha iftihar" ;
@@ -7,6 +8,7 @@ public class UpperCase {
     public static String toUpperCase(String str) {
         StringBuilder sb = new StringBuilder(""); 
     
+        // Niche jo toUpperCase use kiya h wo Inbuilt fxn h java ka
         char ch = Character.toUpperCase(str.charAt(0));
         sb.append(ch);
 
