@@ -34,6 +34,7 @@ int fibonacci_2(int n){
         prev2 = prev;
         prev = curr;
     }
+    if(n == 0) return prev2;
     return prev;
 }
 
